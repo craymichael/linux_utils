@@ -1,0 +1,9 @@
+[Unit]
+Description=Reset frozen QEMU/KVM domains using virsh.
+
+[Service]
+Type=simple
+ExecStart=/path/to/monitor_domains.py -d vm1,vm2
+
+[Install]
+WantedBy=multi-user.target
