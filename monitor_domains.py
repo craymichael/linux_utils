@@ -1,4 +1,18 @@
 #!/usr/bin/python
+"""
+This script monitors domains using virsh for high CPU usage and restarts them
+if they appear to be locked up. See CLI arguments for descriptions on how to
+parametrize this monitoring. Ensure that domain names are spelled correctly
+(including case), exist, and that the script (and therefore virsh) and run
+as the correct user (for me I run them as root). The following is needed to
+run this script:
+
+    - "virsh" tool (install via your package manager...)
+    - python2.{6,7} or python 3.{4,5,6,7}
+
+A minimal systemd service file is also provided if you would like to run this
+script as a service.
+"""
 from __future__ import (print_function, absolute_import, unicode_literals,
                         division)
 import argparse
